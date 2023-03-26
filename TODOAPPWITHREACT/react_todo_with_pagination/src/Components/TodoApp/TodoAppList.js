@@ -6,7 +6,7 @@ const TodoAppList = ({title,id,status,handleDelete,handleToggle}) => {
 
   return (
     <div>
-       <div key={id} style={{display:"flex",alignItems:"center"}}>
+       <div key={id} style={{display:"flex",height:"80px",justifyContent:"flex-end",alignItems:"center",backgroundColor:"plum",margin:"3px",padding:"10px"}}>
             <div style={{display:"flex",marginRight:"10px",alignItems:"center"}} >
                <h1 style={{color:"red"}}>{title}</h1>
                <h4 style={{marginLeft:"10px"}}>{status?"Completed":"Not Completed"}</h4>

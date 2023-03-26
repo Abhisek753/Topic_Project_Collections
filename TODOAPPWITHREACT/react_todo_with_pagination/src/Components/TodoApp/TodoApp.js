@@ -38,7 +38,7 @@ const TodoApp = () => {
 
 
   return (
-    <div style={{display:"flex",width:"70%",alignItems:"center",flexDirection:"column",border:"1px solid red",margin:"auto"}}>
+    <div style={{display:"flex",width:"70%",alignItems:"center",flexDirection:"column",border:"1px solid red",margin:"auto",backgroundImage:`url(https://natureconservancy-h.assetsadobe.com/is/image/content/dam/tnc/nature/en/photos/Zugpsitze_mountain.jpg?crop=0%2C214%2C3008%2C1579&wid=1200&hei=630&scl=2.506666666666667)`}}>
       <div style={{display:"flex",}}>
       <input  style={{width:"300px",height:"40px",fontSize:"large"}} placeholder='fill the fields' value={input} onChange={handleChange} />
       <button onClick={handleSubmit} >Add</button>
