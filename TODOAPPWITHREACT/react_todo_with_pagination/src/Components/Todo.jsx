@@ -5,19 +5,21 @@ const Todo = () => {
 const [state,setState]=useState(0)
 const [data,setdata]=useState([])
 const [page,setPage]=useState(1)
-const getData=async()=>{
-  let res=await  axios.get("https://jsonplaceholder.typicode.com/posts")
+const getData=async(page)=>{
+    console.log(page)
+  let res=await  axios.get(`https://jsonplaceholder.typicode.com/posts?_page=${page}&_limit=8`)
  
  let data= await res.data
   setdata(data)
 }
 useEffect(()=>{
-    getData()
-},[])
+    getData(page)
+},[page])
 const handlesubmit=()=>{
     setState((pre)=>pre+1)
 }
 console.log(data)
+
   return (
     <div>
       <button onClick={handlesubmit}>ADD</button>
@@ -31,6 +33,11 @@ console.log(data)
 
             </div>
          ))}
+      </div>
+      <div style={{display:"flex",marginLeft:"50%"}}>
+        <button onClick={()=>setPage(pre=>pre-1)} >pre</button>
+        <button>{page}</button>
+        <button  onClick={()=>setPage(pre=>pre+1)} >next</button>
       </div>
   
     </div>
