@@ -1,19 +1,38 @@
 import React, { useState } from 'react'
+import TodoAppList from './TodoAppList';
 
 const TodoApp = () => {
-  const [input,setInput]=useState("")
-  console.log(input)
+  const [input,setInput]=useState("");
+  const [todo,setTodo]=useState([])
+  // console.log(input)
   const handleChange=(e)=>{
     setInput(e.target.value)
   }
+
+  const handleSubmit=()=>{
+    const newtodo={
+      title:input,
+      status:false,
+      id: Math.random()+ Date.now()
+    }
+    setTodo([...todo,newtodo])
+    setInput("")
+  }
+    
+  
+
+  console.log(todo)
   return (
-    <div style={{display:"flex",marginLeft:"30%"}}>
-      <div>
+    <div >
+      <div style={{display:"flex",marginLeft:"30%"}}>
       <input placeholder='fill the fields' value={input} onChange={handleChange} />
-      <button>Add</button>
+      <button onClick={handleSubmit} >Add</button>
       </div>
       <div>
-        <h1>{input}</h1>
+        {todo.map((e)=>(
+         <TodoAppList {...e}/>
+            
+        ))}
       </div>
     </div>
     
