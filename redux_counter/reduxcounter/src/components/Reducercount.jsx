@@ -26,6 +26,13 @@ const Reducercount = () => {
          
     },initialState)
 
+    const namesubmit=(e)=>{
+      dispatch({type:"NAME",payload:e.target.value})
+    }
+    const emailsubmit=(e)=>{
+      dispatch({type:"EMAIL",payload:e.target.value})
+    }
+
       const handleClick=(e)=>{
         e.preventDefault()
         console.log("submit")
@@ -41,9 +48,13 @@ const Reducercount = () => {
         <button onClick={()=>dispatch({type:"ADD",payload:1})} >Add</button>
         </div> */}
         <div>
-            <input type="text" value={input.name}  onChange={(e)=>dispatch({type:"NAME",payload:e.target.value})} />
-            <input type="text" value={input.email}  onChange={(e)=>dispatch({type:"EMAIL",payload:e.target.value})} />
+            <input type="text" required value={input.name}  onChange={namesubmit} />
+            <input type="email" required value={input.email}  onChange={emailsubmit} />
             <button onClick={handleClick}>Submit</button>
+        </div>
+        <div>
+          <h1>{input.name}</h1>
+          <h1>{input.email}</h1>
         </div>
 
     </div>
