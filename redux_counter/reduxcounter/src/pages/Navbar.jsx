@@ -21,6 +21,11 @@ const Navbar = () => {
             <p>Redux Counter</p>
         </div>
         </Link>
+        <Link  to="/reduxtodo"  >
+        <div >
+            <p>Redux Todo</p>
+        </div>
+        </Link>
     </div>
   )
 }

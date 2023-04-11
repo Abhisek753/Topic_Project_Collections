@@ -2,6 +2,10 @@
 import { reducer } from "./reducer"
   const initialState={
     count:0,
-    todo:[]
+    todos:[],
+    isLoading:false,
+    isAuth:false,
+    token:"",
+    isError:false
 }
   export const store=legacy_createStore(reducer,initialState)

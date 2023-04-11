@@ -1,5 +1,6 @@
 
 import './App.css';
+import Auth from './pages/Auth';
 import Navbar from './pages/Navbar';
 import Allroutes from './routes/Allroutes';
 

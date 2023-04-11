@@ -1,0 +1,31 @@
+#navbar{
+    display: flex;
+    justify-content:space-evenly;
+    height: 50px;
+    background-color: plum;
+}
+#navbar>div{
+    font-size: x-large;
+    color:black;
+    background-color:rgb(83, 255, 71);
+    margin: 10px;
+    border-radius: 5px;
+    
+}
+#allcat{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    border: 1px solid rgb(17, 141, 169);
+
+}
+#allcat>div{
+    background-color: rgb(221, 160, 167);
+    margin: 10px;
+    padding: 4px;
+    height: fit-content;
+}
+#allcat>div>img{
+    width: 100%;
+    height: 40%;
+    border: 1px solid green;
+}
