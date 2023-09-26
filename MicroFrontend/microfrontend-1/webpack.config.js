@@ -10,10 +10,7 @@ module.exports = {
   mode: "development",
   devServer: {
     static: path.join(__dirname, "dist"),
-    port: 3001,
-    historyApiFallback: {
-      index: "/public/index.html",
-    },
+    port: 3000,
   },
   module: {
     rules: [
@@ -29,10 +26,14 @@ module.exports = {
   plugins: [
     htmlPlugin,
     new ModuleFederationPlugin({
-      name: "Host",
+      name: "MicroFrontend",
       filename: "remoteEntry.js",
-      remotes: {
-        MicroFrontend: "MicroFrontend@http://localhost:3000/remoteEntry.js",
+      exposes: {
+        "./Button": "./src/Button",
+      },
+      shared: {
+        react: { singleton: true, eager: true },
+        "react-dom": { singleton: true, eager: true },
       },
     }),
   ],
